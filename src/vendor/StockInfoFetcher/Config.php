@@ -1,55 +1,55 @@
 <?php
-namespace StockInfoFetcher;
-
-/**
- * Klasa wspomagająca pobieranie konfiguracji aplikacji
- * Class Config
- * @package StockInfoFetcher
- */
-class Config
-{
-    /**
-     * Przechowuje instancję klasy
-     * @var Config
-     */
-	protected static $instance;
+    namespace StockInfoFetcher;
 
     /**
-     * Przechowuje konfigurację aplikacji
-     * @var array
+     * Klasa wspomagająca pobieranie konfiguracji aplikacji
+     * Class Config
+     * @package StockInfoFetcher
      */
-	protected static $config;
+    class Config
+    {
+        /**
+         * Przechowuje instancję klasy
+         * @var Config
+         */
+        protected static $instance;
 
-    /**
-     * Wczytuje konfigurację aplikacji
-     */
-	protected function __construct()
-	{
-		require_once realpath(__DIR__) . '/config/config.php';
-		self::$config = $CONFIG;
-	}
+        /**
+         * Przechowuje konfigurację aplikacji
+         * @var array
+         */
+        protected static $config;
 
-	/**
-	 * Pobiera instancję tej klasy
-	 * 
-	 * @return Config instancja klasy Config
-	 */
-	public static function getInstance()
-	{
-		if(!self::$instance) {
-			self::$instance = new Config();
-		}
-		return self::$instance;
-	}
+        /**
+         * Wczytuje konfigurację aplikacji
+         */
+        protected function __construct()
+        {
+            require_once realpath(__DIR__) . '/config/config.php';
+            self::$config = $CONFIG;
+        }
 
-	/**
-	 * Zwraca wartość spod przekazanego klucza
-	 * 
-	 * @param string $index
-	 * @return mixed zawartość configa pod kluczem $indeks
-	 */
-	public function get($index)
-	{
-		return self::$config[$index];
-	}
-}
+        /**
+         * Pobiera instancję tej klasy
+         *
+         * @return Config instancja klasy Config
+         */
+        public static function getInstance()
+        {
+            if (!self::$instance) {
+                self::$instance = new Config();
+            }
+            return self::$instance;
+        }
+
+        /**
+         * Zwraca wartość spod przekazanego klucza
+         *
+         * @param string $index
+         * @return mixed zawartość configa pod kluczem $indeks
+         */
+        public function get($index)
+        {
+            return self::$config[$index];
+        }
+    }

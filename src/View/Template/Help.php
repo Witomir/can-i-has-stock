@@ -1,4 +1,4 @@
 Jako parametry podaj 1 lub więcej symboli oddzielonych spacją, np:
-   notowania PKO
+notowania PKO
 lub:
-   notowania PKO KGH CCC
+notowania PKO KGH CCC
