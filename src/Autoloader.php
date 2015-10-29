@@ -48,6 +48,7 @@
             }
             foreach ($this->namespaces as $namespace) {
                 $class = str_replace($namespace . '\\', '', $class);
+                $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
                 $path = APP_PATH . $class . $this->fileExtension;
                 $vendorPath = APP_PATH . $this->vendorFolder . DIRECTORY_SEPARATOR . $class . $this->fileExtension;
                 if (file_exists($path)) {

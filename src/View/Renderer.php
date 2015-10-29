@@ -33,6 +33,7 @@
          */
         private function getTemplatePath($templateName)
         {
-            return APP_PATH . $templateName;
+            $path = APP_PATH . $templateName;
+            return str_replace('\\', DIRECTORY_SEPARATOR, $path);
         }
     }

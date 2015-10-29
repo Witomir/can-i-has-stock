@@ -41,7 +41,7 @@
          */
         public function getTemplateName()
         {
-            return $this->templateName;
+            return str_replace('\\', DIRECTORY_SEPARATOR, $this->templateName);
         }
 
         /**
